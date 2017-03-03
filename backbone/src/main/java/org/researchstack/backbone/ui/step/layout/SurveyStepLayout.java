@@ -35,19 +35,19 @@ public class SurveyStepLayout extends FixedSubmitBarLayout implements StepLayout
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     // Data used to initializeLayout and return
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    private QuestionStep questionStep;
-    private StepResult stepResult;
+    protected QuestionStep questionStep;
+    protected StepResult stepResult;
 
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     // Communicate w/ host
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    private StepCallbacks callbacks;
+    protected StepCallbacks callbacks;
 
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     // Child Views
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    private LinearLayout container;
-    private StepBody stepBody;
+    protected LinearLayout container;
+    protected StepBody stepBody;
 
     public SurveyStepLayout(Context context) {
         super(context);
@@ -165,7 +165,7 @@ public class SurveyStepLayout extends FixedSubmitBarLayout implements StepLayout
     }
 
     @NonNull
-    private StepBody createStepBody(QuestionStep questionStep, StepResult result) {
+    protected StepBody createStepBody(QuestionStep questionStep, StepResult result) {
         try {
             Class cls = questionStep.getStepBodyClass();
             Constructor constructor = cls.getConstructor(Step.class, StepResult.class);

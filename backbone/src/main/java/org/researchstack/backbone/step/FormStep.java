@@ -1,6 +1,7 @@
 package org.researchstack.backbone.step;
 
 import org.researchstack.backbone.answerformat.FormAnswerFormat;
+import org.researchstack.backbone.ui.step.layout.FormStepLayout;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,5 +39,10 @@ public class FormStep extends QuestionStep {
 
     public void setFormSteps(List<QuestionStep> formSteps) {
         this.formSteps = formSteps;
+    }
+
+    @Override
+    public Class getStepLayoutClass() {
+        return FormStepLayout.class;
     }
 }
