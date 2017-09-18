@@ -71,7 +71,7 @@ public abstract class FixedSubmitBarLayout extends FrameLayout implements StepLa
     }
 
     private void onScrollChanged(ScrollView scrollView, View submitBarGuide, View submitBar) {
-        int scrollY = scrollView.getScrollY();
+      /*  int scrollY = scrollView.getScrollY();
         int guidePosition = submitBarGuide.getTop() - scrollY;
         int guideHeight = submitBarGuide.getHeight();
         int yLimit = scrollView.getHeight() - guideHeight;
@@ -81,7 +81,8 @@ public abstract class FixedSubmitBarLayout extends FrameLayout implements StepLa
         } else {
             int translationY = guidePosition - yLimit;
             ViewCompat.setTranslationY(submitBar, translationY);
-        }
+        }*/
 
+       ViewCompat.setTranslationY(submitBar, 0);
     }
 }
